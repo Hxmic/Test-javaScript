@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+//onclick 设置在这里，为了在整个body布局中进行点击，
+<html lang="en" onclick="star(event)">
+<head>
+    <meta charset="UTF-8">
+    <title>js个人简单测试</title>
+
+    <script type="text/javascript">
+        //点击不同的地方，在点击的地方显示图片
+        function star(e) {
+            //创建一个小星星
+            var obj = document.createElement("img");
+            obj.src = "a%20(3).jpg";
+            //设置随机图片的大小
+            var w = Math.floor(Math.random() * (100 - 20) + 20);
+            obj.width = w;
+            //找到鼠标点击的位子
+            var x = e.clientX;
+            var y = e.clientY;
+            //设置为绝对布局，让其显示在鼠标点击的位子
+            obj.style.position = "absolute";
+            obj.style.top = y + "px";
+            obj.style.left = x + "px";
+            //放到body里面
+            document.appendChild(obj);
+        }
+    </script>
+</head>
+<body>
+
+
+</body>
+</html>
