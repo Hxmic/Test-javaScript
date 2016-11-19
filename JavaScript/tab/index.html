@@ -5,33 +5,76 @@
     <title>tab浏览</title>
 
     <style type="text/css">
-        #d1{
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #div {
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        #d1 {
             width: 800px;
             border: 1px solid green;
         }
-        ul li{
+
+        ul li {
             list-style: none;
-            float: left;
+            display: inline;
+            text-align: center;
             padding-left: 50px;
             border: 1px solid red;
+
         }
-        ul{
+
+        ul {
             height: 50px;
         }
 
+        #div1, #div2, #div3, #div4 {
+            display: none;
+        }
 
+        #div1 {
+            display: block;
+        }
 
     </style>
 
+    <script type="text/javascript">
+        function showDiv(n, m) {
+            //把所有的div内容都隐藏(也可以放到一个函数里面)
+            for (var i = 1; i <= 4; i++) {
+                var allDiv = document.getElementById("div" + i);
+                allDiv.style.display = "none";
+            }
+            //把所有li的背景颜色显示
+            for (var i = 1; i <= 4; i++) {
+                var allLi = document.getElementById("li" + i);
+                allLi.style.borderBottom = "1px solid white";
+            }
+
+
+            //获取div对象
+            var obj = document.getElementById("div" + n);
+            obj.style.display = "block";
+            m.style.borderBottom = "1px solid white"
+
+        }
+
+    </script>
+
 </head>
 <body>
-
+<div id="div">
     <div id="d1">
         <ul>
-            <li id="li1">Internation news</li>
-            <li id="li2">contory news</li>
-            <li id="li3">Internation news</li>
-            <li id="li4">happy news</li>
+            <li id="li1" onmouseover="showDiv(1,this)">Internation news</li>
+            <li id="li2" onmouseover="showDiv(2,this)">contory news</li>
+            <li id="li3" onmouseover="showDiv(3,this)">Internation news</li>
+            <li id="li4" onmouseover="showDiv(4,this)">happy news</li>
         </ul>
 
         <div id="div1">
@@ -60,5 +103,6 @@
         </div>
 
     </div>
+</div>
 </body>
 </html>
