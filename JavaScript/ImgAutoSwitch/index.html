@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ImgAutoSwitch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            float: left;
+        }
+        #div {
+            width: 80%;
+            margin: 0 auto;
+        }
+        #div1 {
+            border: 1px solid blue;
+            width: 300px;
+            float: left;
+        }
+        #div1 ul {
+            float: left;
+
+        }
+        ul li {
+            list-style: none;
+            border: 1px solid blue;
+            width: 30px;
+            height: 27px;
+            text-align: center;
+            line-height: 27px;
+            margin-right: 5px;
+        }
+    </style>
+
+    <script type="text/javascript">
+        window.onload = init;
+        //设置全局变量已方便使用
+        var i = 1;
+        var mark;
+        function init() {
+            //初始化，让第一个li也显示背景颜色
+            var obj = document.getElementById("li1");
+            obj.style.background = "blue";
+            mark = window.setInterval("images()", 1000);
+        }
+        //图片自动切换函数
+        function images() {
+            i++;
+            if (i > 8) i = 1;
+            //获取img对象
+            var obj = document.getElementById("d1");
+            obj.src = "images/b%20(" + i + ").jpg";
+            //再去修改li的标签背景颜色
+            col();
+            var color = document.getElementById("li" + i);
+            color.style.background = "blue";
+        }
+        //鼠标移入，停止切换
+        function stopTu() {
+            window.clearInterval(mark);
+        }
+        //鼠标移出，开始进行图片切换
+        function startTu() {
+            mark = window.setInterval("images()", 1000);
+        }
+        //鼠标移入图片停止
+        function pauseImg(n, m) {
+            i = n;//n和i用同一变量表示
+            var obj = document.getElementById("d1");
+
+            obj.src = "images/b%20(" + n + ").jpg";
+
+            //先来清除第一个样式，鼠标移出后显示原来的颜色
+            for (var j = 1; j <= 8; j++) {
+                var obj1 = document.getElementById("li" + j);
+                obj1.style.background = "white";
+            }
+            window.clearInterval(mark);
+            m.style.background = "blue";
+        }
+        //移出鼠标后图片接着动
+        function activeImg() {
+            mark = window.setInterval("images()",1000);
+        }
+        //清除所有标签颜色
+        function col() {
+            for(var j=1;j<=8;j++){
+                var obj1 = document.getElementById("li"+j);
+                obj1.style.background  = "white";
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="div">
+
+    <div id="div1">
+        <img id="d1" src="images/b%20(1).jpg" onmouseover="stopTu()" onmouseout="startTu()">
+        <ul>
+            <li id="li1" onmouseout="activeImg()" onmouseover="pauseImg(1 ,this/*this*/)">1</li>
+            <li id="li2" onmouseout="activeImg()" onmouseover="pauseImg(2,this)">2</li>
+            <li id="li3" onmouseout="activeImg()" onmouseover="pauseImg(3,this)">3</li>
+            <li id="li4" onmouseout="activeImg()" onmouseover="pauseImg(4,this)">4</li>
+            <li id="li5" onmouseout="activeImg()" onmouseover="pauseImg(5,this)">5</li>
+            <li id="li6" onmouseout="activeImg()" onmouseover="pauseImg(6,this)">6</li>
+            <li id="li7" onmouseout="activeImg()" onmouseover="pauseImg(7,this)">7</li>
+            <li id="li8" onmouseout="activeImg()" onmouseover="pauseImg(8,this)">8</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
