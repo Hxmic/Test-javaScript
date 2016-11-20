@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下拉菜单</title>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script src="style.js" type="text/javascript"></script>
+
+
+</head>
+<body>
+<div id="wrap">
+    <ul id="navigation">
+        <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+            <a href="#">下拉1</a>
+            <ul>
+                <li><a href="#">下拉1--菜单1</a></li>
+                <li><a href="#">下拉1--菜单2</a></li>
+                <li><a href="#">下拉1--菜单3</a></li>
+                <li><a href="#">下拉1--菜单4</a></li>
+            </ul>
+        </li>
+
+        <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+            <a href="#">下拉2</a>
+            <ul>
+                <li><a href="#">下拉2-菜单1</a></li>
+                <li><a href="#">下拉2-菜单2</a></li>
+                <li onmouseover="displaySubMenu(this)" onmouseout="hideSubMenu(this)">
+                    <a href="#">下拉2-菜单3</a>
+                    <ul>
+                        <li><a href="#">菜单3--子菜单</a></li>
+                        <li><a href="#">菜单3--子菜单</a></li>
+                    </ul>
+
+                </li>
+
+            </ul>
+
+        </li>
+
+
+    </ul>
+
+</div>
+
+
+</body>
+</html>
