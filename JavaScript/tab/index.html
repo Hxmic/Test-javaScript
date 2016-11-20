@@ -6,25 +6,23 @@
 
     <style type="text/css">
         * {
-            padding: 0;
             margin: 0;
-        }
-
-        #div {
-            width: 70%;
-            margin: 0 auto;
+            padding: 0;
         }
 
         #d1 {
-            width: 800px;
-            border: 1px solid green;
+            border: 1px solid red;
+            width: 500px;
+            height: 300px;
         }
 
         ul li {
             list-style: none;
-            display: inline;
+            float: left;
+            width: 95px;
             text-align: center;
-            padding-left: 50px;
+            line-height: 50px;
+            height: 50px;
             border: 1px solid red;
 
         }
@@ -40,27 +38,38 @@
         #div1 {
             display: block;
         }
-
     </style>
+
 
     <script type="text/javascript">
         function showDiv(n, m) {
-            //把所有的div内容都隐藏(也可以放到一个函数里面)
             for (var i = 1; i <= 4; i++) {
                 var allDiv = document.getElementById("div" + i);
                 allDiv.style.display = "none";
             }
-            //把所有li的背景颜色显示
+
+
             for (var i = 1; i <= 4; i++) {
                 var allLi = document.getElementById("li" + i);
-                allLi.style.borderBottom = "1px solid white";
+                allLi.style.background = "white";
             }
+            //此方法引入一个参数
+            m.style.background = "red";
+                //此方法不引入参数
+                /*for(var i=1;i<=4;i++){
+                 var allLi = document.getElementById("li"+i);
+                 allLi.style.background="white";
+                 }
+                 //获取li对象
+                 var liobj= document.getElementById("li"+n);
+                 liobj.style.background="red";*/
+
+                //获取div对象
+                var obj = document.getElementById("div" + n);
+                obj.style.display = "block";
 
 
-            //获取div对象
-            var obj = document.getElementById("div" + n);
-            obj.style.display = "block";
-            m.style.borderBottom = "1px solid white"
+
 
         }
 
@@ -68,41 +77,41 @@
 
 </head>
 <body>
-<div id="div">
-    <div id="d1">
-        <ul>
-            <li id="li1" onmouseover="showDiv(1,this)">Internation news</li>
-            <li id="li2" onmouseover="showDiv(2,this)">contory news</li>
-            <li id="li3" onmouseover="showDiv(3,this)">Internation news</li>
-            <li id="li4" onmouseover="showDiv(4,this)">happy news</li>
-        </ul>
 
-        <div id="div1">
-            根据你的等级和职位的变化<br>，
-            入门级到专家级，<br>
-            广度和深度都会有所增加。
+<div id="d1">
+    <ul>
+        <li id="li1" onmouseover="showDiv(1,this)">Internation news</li>
+        <li id="li2" onmouseover="showDiv(2,this)">contory news</li>
+        <li id="li3" onmouseover="showDiv(3,this)">Internation news</li>
+        <li id="li4" onmouseover="showDiv(4,this)">happy news</li>
+        <li></li>
+    </ul>
 
-        </div>
-        <div id="div2">
-            理论知识、算法、项目细节、<br>
-            技术视野、开放性题、<br>
-            工作案例。
-        </div>
-        <div id="div3">
-            回答问题再棒，面试官（可能是你面试职位的直接领导），<br>
-            会考虑我要不要这个人做我的同事？<br>
-            所以态度很重要、除了能做事，还要会做人。<br>
-            （感觉更像是相亲( •̣̣̣̣̣̥́௰•̣̣̣̣̣̥̀ )）<br>
-
-        </div>
-        <div id="div4">
-            资深的前端开发能把absolute和relative弄混，<br>
-            这样的人不要也罢，因为团队需要的是：<br>
-            你这个人具有可以依靠的才能（靠谱）。
-
-        </div>
+    <div id="div1">
+        根据你的等级和职位的变化<br>，
+        入门级到专家级，<br>
+        广度和深度都会有所增加。
 
     </div>
+    <div id="div2">
+        理论知识、算法、项目细节、<br>
+        技术视野、开放性题、<br>
+        工作案例。
+    </div>
+    <div id="div3">
+        回答问题再棒，面试官（可能是你面试职位的直接领导），<br>
+        会考虑我要不要这个人做我的同事？<br>
+        所以态度很重要、除了能做事，还要会做人。<br>
+        （感觉更像是相亲( •̣̣̣̣̣̥́௰•̣̣̣̣̣̥̀ )）<br>
+
+    </div>
+    <div id="div4">
+        资深的前端开发能把absolute和relative弄混，<br>
+        这样的人不要也罢，因为团队需要的是：<br>
+        你这个人具有可以依靠的才能（靠谱）。
+
+    </div>
+
 </div>
 </body>
 </html>
