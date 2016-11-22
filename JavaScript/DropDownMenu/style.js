@@ -11,3 +11,14 @@ function hideSubMenu(li) {
     subMenu.style.display = "none";
 
 }
+/*
+*  广告页面
+*/
+window.onload = init;
+function init() {
+    window.open("ad.html","advertising","width=500,height=500,left=200");
+}
+function closeAD() {
+    var obj = document.getElementById("div");
+    obj.style.display = "none";
+}

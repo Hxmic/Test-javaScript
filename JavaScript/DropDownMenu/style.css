@@ -58,3 +58,22 @@
     width: 120px;
 }
 
+
+/*
+   新增加广告弹出页面和固定广告页面
+*/
+#div{
+    border: 1px solid red;
+    width: 200px;
+    position: fixed;
+    top: 80px;
+    right: 60px;
+}
+
+div input{
+    position: absolute;
+    border: 1px solid green;
+    background: darkgrey;
+    right: 0;
+    top:0;
+}
