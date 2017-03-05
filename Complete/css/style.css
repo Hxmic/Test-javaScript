@@ -5,6 +5,13 @@
     color: #000;
 }
 
+img{
+  width: 500px;
+  height: 352px;
+}
+/*
+头部
+ */
 #header {
     width: 90%;
     margin: 0 auto;
@@ -33,7 +40,9 @@ hr {
     font-size: 15px;
     background: green;
 }
-
+/**
+ * 下拉
+ */
 #navigation, #navigation li ul {
     list-style-type: none;
 }
@@ -75,12 +84,15 @@ hr {
     display: none;
     position: absolute;
 }
-
+/**
+ * tab标签
+ */
 #tab {
     margin: 100px 0 0 90px;
     border: 2px solid #00ff00;
     width: 590px;
     height: 352px;
+    float: left;
 }
 
 #tab ul li {
@@ -130,4 +142,21 @@ hr {
 .la{
   text-align: right;
   text-indent: 5px;
+}
+/**
+ * 图片自动切换
+ */
+#ImgAutoSwitch{
+  float: left;
+  margin: 100px 0 0 200px;
+}
+#iul{
+  list-style: none;
+}
+#iul li{
+  display: inline;
+  color: #000;
+  height: 20px;
+  line-height: 20px;
+  width: 10px;
 }
