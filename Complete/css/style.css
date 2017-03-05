@@ -1,21 +1,20 @@
-*{
+* {
     padding: 0;
     margin: 0;
     font-weight: bold;
     color: #000;
 }
 
-#header{
+#header {
     width: 90%;
     margin: 0 auto;
 }
 
-
-.row{
+.row {
     margin-top: 10px;
 }
 
-.spa{
+.spa {
     padding-left: 5px;
     padding-top: 15px;
     font-family: 楷体;
@@ -23,53 +22,83 @@
     font-weight: bold;
 }
 
-hr{
+hr {
     margin-top: 10px;
     width: 100%;
 }
 
-#tab{
-    width: 80%;
-    margin:  0 auto;
-    font-size: 20px;
-    background:green;
+#DropDown {
+    width: 62%;
+    margin: 0 auto;
+    font-size: 15px;
+    background: green;
 }
 
-#navigation,#navigation li ul{
+#navigation, #navigation li ul {
     list-style-type: none;
 }
 
-#navigation li{
+#navigation li {
     float: left;
     text-align: center;
     position: relative;
 }
-.clear{
+
+.clear {
     margin-left: 20px;
 }
 
-#navigation li a:link,#navigation li a:visited{
+#navigation li a:link, #navigation li a:visited {
     display: block;
     text-decoration: none;
     height: 30px;
     line-height: 30px;
     /*border: 1px solid #ffff00;*/
-   /* border-width: 1px 1px 0 0 ;*/
+    /* border-width: 1px 1px 0 0 ;*/
 }
-#navigation li a:hover{
+
+#navigation li a:hover {
     color: #000000;
 }
 
-#navigation li ul li a:hover{
+#navigation li ul li a:hover {
     color: #000;
 }
-#navigation li ul{
-    display: none;
-    position: absolute;
-    width: 100px;
-}
-#navigation li ul li ul{
-    display: none;
-    position: absolute;
 
+#navigation li ul {
+    display: none;
+    position: absolute;
+    width: 105px;
+}
+
+#navigation li ul li ul {
+    display: none;
+    position: absolute;
+}
+
+#tab {
+    margin: 100px 0 0 90px;
+    border: 1px solid red;
+    width: 572px;
+    height: 400px;
+}
+
+#tab ul li {
+    list-style: none;
+    float: left;
+    width: 95px;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    border: 1px solid white;
+}
+#tab ul{
+  height: 50px;
+}
+
+#div1,#div2,#div3,#div4{
+  display: none;
+}
+#div1{
+  display: block;
 }
